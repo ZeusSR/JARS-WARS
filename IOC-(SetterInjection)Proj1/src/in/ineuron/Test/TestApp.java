@@ -22,7 +22,10 @@ public class TestApp {
     		//Requesting IOC container to give the objectsearching 
 //    		will happen in cache and if it is not found then 
     		WishMessgeGenerator generator1 = factory.getBean("wmg", WishMessgeGenerator.class);
-    		
+
+
+        //    		To Show Caching Property of IOC Container
+//    		factory.destroySingletons();
     		System.out.println();
     		
     		//Searching will happen in cache, it is found so get it from cache only.
