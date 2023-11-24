@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Configuring DEPENDANT bean -->
+	<bean id="b1" class="in.ineuron.bean.B" >
+    <property name="a" ref='a1'/>
+	</bean>
+
+	<!-- Configuring Target bean -->
+	<bean id="a1" class="in.ineuron.bean.A">
+		<property name="b" ref='b1'/>
+	</bean>
+	
+	
+	<!-- Constuctor Cyclic Dependency Injection-->
+	
+		<!-- Configuring DEPENDANT bean -->
+	<bean id="c1" class="in.ineuron.bean.C" >
+    <constructor-arg name = "d" ref = 'd1' />
+	</bean>
+
+	<!-- Configuring Target bean -->
+	<bean id="d1" class="in.ineuron.bean.D">
+		<constructor-arg name = "c" ref = 'c1' />
+	</bean>
+</beans>
