@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="sysDate" class="java.util.Date" />
+	<bean id="dobDate" class="java.util.Date">
+		<property name="year" value="93" />
+		<property name="month" value="2" />
+		<property name="date" value="03" />
+	</bean>
+
+
+	<!-- Array injection -->
+	<bean id="marksInfo" class="in.ineuron.bean.MarksInfo">
+		<property name="marks">
+			<array>
+				<value>100</value>
+				<value>97</value>
+				<value>99</value>
+			</array>
+		</property>
+		<property name="dates">
+			<array>
+				<ref bean="sysDate" />
+				<ref bean="dobDate" />
+			</array>
+		</property>
+	</bean>
+	
+	<!-- List injection -->
+	<bean id="college" class="in.ineuron.bean.College">
+		<property name="nameList">
+			<list value-type = "java.lang.String" >
+				<value>IIM Bangalore</value>
+				<value>AIIMS Delhi</value>
+				<value>Delhi University</value>
+			</list>
+		</property>
+		<property name="dateList">
+			<list>
+				<ref bean="sysDate" />
+				<ref bean="dobDate" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Set injection-->
+	
+	<bean id="contact" class="in.ineuron.bean.ContactsInfo">
+		
+		<constructor-arg name = "phonenumbers">
+		<set>
+		<value>1234567890</value>
+		<value>0987654321</value>
+		<value>345671234</value>
+		<value>0000000088</value>
+		<value>1234567890</value>
+		</set>
+		</constructor-arg>
+		
+		<constructor-arg name = "dateSet">
+		<set>
+				<ref bean="sysDate" />
+				<ref bean="dobDate" />
+		</set>
+		</constructor-arg >
+		
+	</bean>
+	<!-- Map Injection -->
+	<bean id='university' class='in.ineuron.bean.UniversityInfo'>
+	
+		<property name="facultyDetails">
+			<map key-type="java.lang.Integer" value-type="java.lang.String">
+				<entry>
+					<key><value>10</value></key>
+					<value>sachin</value>
+				</entry>
+				<entry key="18" value='kohli' />
+				<entry key="7" value='dhoni' />
+			</map>
+		</property>
+
+		<property name="dateInfo">
+			<map key-type="java.lang.String" value-type="java.util.Date">
+				<entry>
+					<key><value>toDay</value></key>
+					<ref bean='sysDate' />
+				</entry>
+				<entry key="dob" value-ref="dobDate" />
+			</map>
+		</property>
+		
+		<property name="technologies">
+			<props>
+				<prop key="CoreJava">Nitin</prop>
+				<prop key="JEE">Hyder</prop>
+				<prop key="Spring">NavinReddy</prop>
+				<prop key="Springboot">Chaitra</prop>
+				<prop key="Microservices">Chandrakala</prop>
+			</props>
+		</property>
+		</bean>
+</beans>
