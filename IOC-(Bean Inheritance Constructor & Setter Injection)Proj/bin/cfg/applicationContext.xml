@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id = "carSet" class = "in.ineuron.bean.Car" abstract ="true" >
+	   <property name="engineCC" value='3000' />
+		<property name="model" value='Thar-E' />
+		<property name="company" value='Mahindra' />
+		<property name="fuelType" value='diesel' />
+		<property name="type" value='SUV' />
+	
+	</bean  >
+
+	<bean id = "car" class = "in.ineuron.bean.Car" abstract ="true" >
+	   <constructor-arg name="engineCC" value='3000' />
+		<constructor-arg name="model" value='Thar' />
+		<constructor-arg name="company" value='Mahindra' />
+		<constructor-arg name="fuelType" value='diesel' />
+		<constructor-arg name="type" value='SUV' />
+	
+	</bean  >
+	
+	<bean id = "car1" class = "in.ineuron.bean.Car" parent = "car">
+	<constructor-arg name = "color" value='red'/>
+	<constructor-arg name = "owner" value='Indra'/>
+	<constructor-arg name = "regNo" value='OD##125567'/>
+	<constructor-arg name = "engineNo" value='234457890'/>
+	
+	</bean>
+	
+	<bean id = "car2" class = "in.ineuron.bean.Car" parent = "car">
+	<constructor-arg name = "color" value='blue'/>
+	<constructor-arg name = "owner" value='IndraSR'/>
+	<constructor-arg name = "regNo" value='OD##127567'/>
+	<constructor-arg name ="fuelType" value='petrol' />
+	<constructor-arg name = "engineNo" value='234957890'/>
+	
+	</bean>
+	
+
+	
+	<bean id = "car3" class = "in.ineuron.bean.Car" parent = "carSet">
+	<property name = "color" value= "White"/>
+	<property name = "owner" value="ZeusSR"/>
+	<property name = "regNo" value="OD##E127867"/>
+	<property name ="fuelType" value= "EV" />
+	<property name = "engineNo" value= "234337890"/>
+	
+	</bean>
+	
+</beans>
