@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<bean id = "sub" class="in.ineuron.bean.CSSubjects" abstract ="true">
+		<property name="subjects">
+		<set>
+		<value>OS</value>
+		<value>C++</value>
+		</set>
+		</property>
+		<property name="semester" value = "1"/>		
+		</bean >
+		
+		
+		<bean class="in.ineuron.bean.CSSubjects" parent = "sub">
+		<property name="subjects">
+		<set>
+		<value>JAVA</value>
+		<value>ADA</value>
+		</set>
+		</property>
+		<property name="semester" value = "2"/>		
+		</bean>
+		
+		<bean class="in.ineuron.bean.CSSubjects" parent = "sub">
+		<property name="subjects">
+		<set>
+		<value>AI</value>
+		<value>DBMS</value>
+		</set>
+		</property>
+		<property name="semester" value = "3"/>		
+		</bean>
+
+</beans>
