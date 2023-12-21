@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- DataSource Configuration -->
+	<bean id="postgresqlDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value='org.postgresql.Driver' />
+		<!-- <property name="url" value='jdbc:postgresql://localhost:5433/in_db_instance' />-->
+		<property name="username" value='postgres' />
+		<property name="password" value='Csm#5518' />
+	</bean>
+	
+	<bean id='hikariDataSource'
+		class='com.zaxxer.hikari.HikariDataSource' parent="postgresqlDataSource">
+		<property name="jdbcUrl" value='jdbc:postgresql://localhost:5433/in_db_instance' />
+		<property name="minimumIdle" value='10' /><!-- min pool size -->
+		<property name="maximumPoolSize" value='20' />
+		<property name="connectionTimeout" value='2000' />
+	</bean>
+	
+	<!-- DAO Configuration -->
+	<bean id='pgsqlDaoImpl' class='in.neuralnet.dao.CustomerPGSQLDAOImp'>
+		<constructor-arg name='dataSource'
+			ref='hikariDataSource' />
+	</bean>
+
+	<!-- Service Configuration -->
+	<bean id='serviceImpl' class='in.neuralnet.service.CustomerMgmtServiceImpl'>
+		<constructor-arg name='dao' ref='pgsqlDaoImpl'/>
+	</bean>
+	
+	<!-- Controller Configuration -->
+	<bean id='controller' class='in.neuralnet.controller.CustomerController'>
+		<constructor-arg name='service' ref='serviceImpl'/>
+	</bean>
+	
+</beans>
