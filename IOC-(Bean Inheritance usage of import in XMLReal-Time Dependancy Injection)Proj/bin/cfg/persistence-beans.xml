@@ -20,7 +20,7 @@
 	
 	<bean id='hikariDataSource'
 		class='com.zaxxer.hikari.HikariDataSource' parent="postgresqlDataSource">
-		<property name="jdbcUrl" value='j${jdbc.url}' />
+		<property name="jdbcUrl" value='${jdbc.url}' />
 		<property name="minimumIdle" value='10' /><!-- min pool size -->
 		<property name="maximumPoolSize" value='20' />
 		<property name="connectionTimeout" value='2000' />

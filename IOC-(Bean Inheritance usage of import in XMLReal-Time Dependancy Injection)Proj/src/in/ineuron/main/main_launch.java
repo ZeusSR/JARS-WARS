@@ -2,8 +2,8 @@ package in.ineuron.main;
 
 import java.util.Scanner;
 
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import in.neuralnet.controller.CustomerController;
 import in.neuralnet.vo.CustomerVo;
@@ -37,9 +37,7 @@ public class main_launch {
 		vo.setRate(rate);
 		vo.setTime(time);
 
-		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
-		reader.loadBeanDefinitions("cfg/applicationContext.xml");
+		ClassPathXmlApplicationContext factory = new ClassPathXmlApplicationContext("cfg/applicationContext.xml");
 
 		CustomerController controller = factory.getBean("controller", CustomerController.class);
 		String result = controller.processResult(vo);
