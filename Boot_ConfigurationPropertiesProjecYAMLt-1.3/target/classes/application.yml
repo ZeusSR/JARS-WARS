@@ -1,0 +1,25 @@
+org:
+  car:
+    engineno: 1234499
+    name: Range Rover
+    feature:
+      colour: Blue
+      speed_milesph: 150
+      type: Sedan
+      places:
+        - MP
+        - Varanasi
+        - Assam
+        - WB
+      best-places:
+        - Varanasi
+        - Assam
+      riders:
+        Person1: Zeus
+        Person2: Xeno
+        Person3: Zack
+      numbers:
+        - 123456
+        - 123457
+        - 123456
+        - 99999

@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "org.car",
+      "type": "in.neuralnet.model.Car",
+      "sourceType": "in.neuralnet.model.Car"
+    }
+  ],
+  "properties": [
+    {
+      "name": "org.car.engineno",
+      "type": "java.lang.Integer",
+      "sourceType": "in.neuralnet.model.Car"
+    },
+    {
+      "name": "org.car.feature",
+      "type": "in.neuralnet.model.Features",
+      "sourceType": "in.neuralnet.model.Car"
+    },
+    {
+      "name": "org.car.name",
+      "type": "java.lang.String",
+      "sourceType": "in.neuralnet.model.Car"
+    }
+  ],
+  "hints": []
+}
