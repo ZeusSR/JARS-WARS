@@ -1,0 +1,1 @@
+Here the Maven inheritance is shown as after mvn install of a project if we use the GAV of the maven project in the child project it inherits all the dependencies.
