@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hkd" class="com.zaxxer.hikari.HikariDataSource">  
+		
+	<property name="driverClassName" value="org.postgresql.Driver"/>
+	<property name="jdbcUrl" value="jdbc:postgresql://localhost:5433/in_db_instance"/>
+	<property name="username" value="postgres" />
+	<property name="password" value="Csm#5518" />
+	<property name="maximumPoolSize" value="30" />
+	<property name="minimumIdle" value="10" />
+    </bean>
+    
+    <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="hkd"/>
+	</bean>
+	
+	<bean id="empdao" class="in.neuralnet.dao.EmployeeDaoImpl">
+		<constructor-arg ref="template"/>
+	</bean>
+	
+	
+
+
+
+</beans>
