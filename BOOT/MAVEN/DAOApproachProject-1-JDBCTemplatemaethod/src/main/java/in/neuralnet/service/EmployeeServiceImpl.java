@@ -1,9 +1,15 @@
 package in.neuralnet.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
+
+import ch.qos.logback.classic.Logger;
+import in.neuralnet.bo.EmployeeBO;
 import in.neuralnet.dao.IEmployeeDao;
+import in.neuralnet.dto.EmployeeDTO;
 
 public class EmployeeServiceImpl implements IEmployeeService {
 
@@ -71,6 +77,32 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	public int addBonusToEmpByDesg(String desg, double bonus) {
 		// TODO Auto-generated method stub
 		return empdao.addBonusToEmpByDesg(desg, bonus);
+	}
+
+
+
+	@Override
+	public List<EmployeeDTO> getEmployeeByAddress(String addr1, String addr2) {
+		
+		
+		List<EmployeeBO> bo = empdao.getEmployeeByAddress(addr1, addr2);
+		 List<EmployeeDTO> dto = new ArrayList<EmployeeDTO>();
+	
+//		 bo.forEach(b->{
+//			 EmployeeDTO dt = new EmployeeDTO();
+//			 BeanUtils.copyProperties(b, dt);
+//			 dto.add(dt);
+//		 });
+//		
+		 System.out.println(bo);
+		 
+		 while(bo.isEmpty())
+		 {EmployeeDTO dt = new EmployeeDTO();
+		 BeanUtils.copyProperties(bo, dt);
+		 dto.add(dt);
+		 }
+		 
+		return dto;
 	}
 
 }

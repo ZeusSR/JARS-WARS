@@ -1,9 +1,14 @@
 package in.neuralnet.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+
+import in.neuralnet.bo.EmployeeBO;
 
 public class EmployeeDaoImpl implements IEmployeeDao {
 
@@ -77,5 +82,32 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		
 		return template.update(SQL_UPADTE,bonus,desg);
 	}
+
+
+
+	@Override
+	public List<EmployeeBO> getEmployeeByAddress(String addr1, String addr2) {
+		
+		return template.query(SQL_GETBT_DESG,new EmployeeRowMapper(),addr1,addr2);
+		
+	}
+		private static class EmployeeRowMapper implements RowMapper<EmployeeBO>
+		{
+
+			@Override
+			public EmployeeBO mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				EmployeeBO bo = null;
+				bo = new EmployeeBO();
+				bo.setInt_id(rs.getInt(1));
+				bo.setS_address(rs.getString(2));
+				bo.setS_name(rs.getString(3));
+				bo.setD_salary(rs.getFloat(4));
+				
+				return bo;
+			}
+			
+		}
+	
 
 }
