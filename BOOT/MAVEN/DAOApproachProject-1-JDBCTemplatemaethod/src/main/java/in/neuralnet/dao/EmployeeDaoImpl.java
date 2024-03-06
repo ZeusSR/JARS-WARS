@@ -87,27 +87,51 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 
 	@Override
 	public List<EmployeeBO> getEmployeeByAddress(String addr1, String addr2) {
-		
-		return template.query(SQL_GETBT_DESG,new EmployeeRowMapper(),addr1,addr2);
-		
-	}
-		private static class EmployeeRowMapper implements RowMapper<EmployeeBO>
-		{
+	//		
+//		return template.query(SQL_GETBT_DESG,new EmployeeRowMapper(),addr1,addr2);
+//		
+//	}
+//		private static class EmployeeRowMapper implements RowMapper<EmployeeBO>
+//		{
+//
+//			@Override
+//			public EmployeeBO mapRow(ResultSet rs, int rowNum) throws SQLException {
+//				
+//				EmployeeBO bo = null;
+//				bo = new EmployeeBO();
+//				bo.setInt_id(rs.getInt(1));
+//				bo.setS_address(rs.getString(2));
+//				bo.setS_name(rs.getString(3));
+//				bo.setD_salary(rs.getFloat(4));
+//				
+//				return bo;
+//			}
+	
+	@Override
+	public List<EmployeeBO> getEmployeeByAddress(String addr1, String addr2) {
+		final List<EmployeeBO> listBo = new ArrayList<EmployeeBO>();
+		 template.query(SQL_GETBT_DESG,new RowCallbackHandler() {
 
 			@Override
-			public EmployeeBO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			public void processRow(ResultSet rs) throws SQLException {
+				System.out.println(
+						"StudentDaoImpl.fetchStudentByCitites(...).new RowCallbackHandler() {...}.processRow()");
 				
 				EmployeeBO bo = null;
 				bo = new EmployeeBO();
+				
 				bo.setInt_id(rs.getInt(1));
 				bo.setS_address(rs.getString(2));
 				bo.setS_name(rs.getString(3));
 				bo.setD_salary(rs.getFloat(4));
 				
-				return bo;
-			}
+				listBo.add(bo);
 			
-		}
+		}},addr1,addr2);
+		 
+		 return listBo;
+		
+	}
 	
 
 }
