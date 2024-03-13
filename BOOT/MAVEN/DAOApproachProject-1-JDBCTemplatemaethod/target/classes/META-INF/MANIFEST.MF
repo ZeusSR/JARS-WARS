@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
 Built-By: somesh.rout
 Build-Jdk: 17.0.6
+Implementation-Title: DAOApproachProject-1-JDBCTemplatemaethod
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: neuralnet
+Implementation-URL: http://www.example.com
 Created-By: Maven Integration for Eclipse
 

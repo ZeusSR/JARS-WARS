@@ -7,6 +7,13 @@
   <groupId>neuralnet</groupId>
   <artifactId>DAOApproachProject-1-JDBCTemplatemaethod</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.10</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
   <name>DAOApproachProject-1-JDBCTemplatemaethod</name>
   <!-- FIXME change it to the project's website -->
