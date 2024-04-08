@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Books Details you stored as : </h2>
+
+<table>
+<tr>
+<td>Book Name :</td>
+<td><span th:text="${book.bname}"/></td>
+</tr>
+
+
+<tr>
+<td>Author Name :</td>
+<td><span th:text= ${book.authorName}/></td>
+</tr>
+
+
+<tr>
+<td>Book price : </td>
+<td><span th:text=${book.bprice}/></td>
+</tr>
+
+
+</table>
+
+<a href="loadingform"> RE LOAD FORM</a>
+</body>
+</html>

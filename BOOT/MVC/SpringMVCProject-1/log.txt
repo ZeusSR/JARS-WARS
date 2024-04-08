@@ -1,0 +1,30 @@
+2024-04-08T15:22:33.953+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] i.n.SpringMvcProject1Application         : Starting SpringMvcProject1Application using Java 17.0.6 with PID 7992 (C:\Users\somesh.rout\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\SpringMVCProject-1\target\classes started by somesh.rout in C:\Users\somesh.rout\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\SpringMVCProject-1)
+2024-04-08T15:22:33.955+05:30 DEBUG 7992 --- [SpringMVCProject-1] [restartedMain] i.n.SpringMvcProject1Application         : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-04-08T15:22:33.956+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] i.n.SpringMvcProject1Application         : No active profile set, falling back to 1 default profile: "default"
+2024-04-08T15:22:34.005+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-08T15:22:34.005+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-08T15:22:35.007+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-04-08T15:22:35.023+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-08T15:22:35.024+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-08T15:22:35.214+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-04-08T15:22:35.220+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-08T15:22:35.221+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1214 ms
+2024-04-08T15:22:35.347+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-04-08T15:22:35.622+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-08T15:22:35.682+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2024-04-08T15:22:35.691+05:30  INFO 7992 --- [SpringMVCProject-1] [restartedMain] i.n.SpringMvcProject1Application         : Started SpringMvcProject1Application in 2.159 seconds (process running for 2.934)
+2024-04-08T15:22:45.869+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-08T15:22:45.870+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-08T15:22:45.871+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-08T15:22:45.922+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] in.neuralnet.controller.BookController   : Conrtrol inside Post request....
+2024-04-08T15:22:45.923+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] in.neuralnet.service.BooksServiceImpl    : Control in for calculating book price with 18%
+2024-04-08T15:22:45.923+05:30 DEBUG 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] in.neuralnet.service.BooksServiceImpl    : Book(bname=Westores, authorName=J.K Rowling, bprice=12200)
+2024-04-08T15:22:45.924+05:30 DEBUG 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] in.neuralnet.service.BooksServiceImpl    : Result is: 14396.0
+2024-04-08T15:22:45.924+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-1] in.neuralnet.controller.BookController   : Book(bname=Westores, authorName=J.K Rowling, bprice=14396.0)
+2024-04-08T15:22:51.536+05:30 DEBUG 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-4] in.neuralnet.controller.BookController   : Conrtrol inside Get request....
+2024-04-08T15:23:38.882+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-7] in.neuralnet.controller.BookController   : Conrtrol inside Post request....
+2024-04-08T15:23:38.883+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-7] in.neuralnet.service.BooksServiceImpl    : Control in for calculating book price with 18%
+2024-04-08T15:23:38.883+05:30 DEBUG 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-7] in.neuralnet.service.BooksServiceImpl    : Book(bname= Head First, authorName=O'Riley, bprice=1200)
+2024-04-08T15:23:38.883+05:30 DEBUG 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-7] in.neuralnet.service.BooksServiceImpl    : Result is: 1416.0
+2024-04-08T15:23:38.883+05:30  INFO 7992 --- [SpringMVCProject-1] [http-nio-9090-exec-7] in.neuralnet.controller.BookController   : Book(bname= Head First, authorName=O'Riley, bprice=1416.0)
+2024-04-08T15:23:59.981+05:30  INFO 7992 --- [SpringMVCProject-1] [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
