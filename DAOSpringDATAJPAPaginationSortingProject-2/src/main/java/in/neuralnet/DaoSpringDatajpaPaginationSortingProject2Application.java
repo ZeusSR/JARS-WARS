@@ -20,9 +20,10 @@ public class DaoSpringDatajpaPaginationSortingProject2Application {
 		
 //		service.fetchDetails(false, "regno").forEach(System.out::println);
 		
-		service.fetchDetailsByPageNo(4, 4, false, "regno") .forEach((vaccine)
-				  -> System.out.println(vaccine.getRegno()+" "+vaccine.getName()+" "+vaccine.getPrice() + " " +
-				  vaccine.getLocation()));
+//	service.fetchDetailsByPageNo(4, 4, false, "regno") .forEach((vaccine)
+//				  -> System.out.println(vaccine.getRegno()+" "+vaccine.getName()+" "+vaccine.getPrice() + " " +
+//				  vaccine.getLocation()));
+		service.fetchDetailsByPagination(3);
 		
 		context.close();
 		
