@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Report</title>
+</head>
+<body style="text-align: center; background-color: lightyellow;">
+	
+	<b>Player Details:</b>
+	<p th:text="${Name}"></p>
+	<p th:text="${Team}"></p>
+	<p th:text="${Age}"></p>
+	<p th:text="${Sport}"></p>
+	<b>Teams Playing:</b>
+   <ul style="text-align: center;">
+      <li style="align-items: center;" th:each="team : ${teams}" th:text="${team}">Team Name</li>
+   </ul>
+    <b>List values of players</b>
+    <div th:each="entry : ${list}">
+    <span th:text="${entry}"></span>
+</div>
+
+   
+   
+   <b>Map values</b>
+   <ul>
+    <li th:each="entry : ${maps}">
+        <!-- Accessing key -->
+        <span th:text="${entry}"></span>        
+
+    </li>
+</ul>
+
+<table border="1" style="width: 100%; text-align: center;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="player : ${plist}">
+            <td th:text="${player.pid}">ID</td>
+            <td th:text="${player.pname}">Name</td>
+            <td th:text="${player.pteam}">Team</td>
+            <td th:text="${player.psalary}">Salary</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+  
+</body>
+</html>
